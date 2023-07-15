@@ -17,8 +17,8 @@ import Textarea from "../../ui/Textarea";
 // Receives closeModal directly from Modal
 /* eslint react/prop-types: 0 */
 function CreateCabinForm({ cabinToEdit, closeModal }) {
-  const { mutate: createCabin, isLoading: isCreating } = useCreateCabin();
-  const { mutate: editCabin, isLoading: isEditing } = useEditCabin();
+  const { createCabin, isCreating } = useCreateCabin();
+  const { editCabin, isEditing } = useEditCabin();
   const isWorking = isCreating || isEditing;
 
   // For an editing session, capture existing form values to edit
