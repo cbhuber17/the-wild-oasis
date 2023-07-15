@@ -1,7 +1,12 @@
 import supabase from "./supabase";
+import { supabaseUrl } from "./supabase";
 
 export async function getCabins() {
-  const { data, error } = await supabase.from("cabins").select("*");
+  // Ensure editied cabin maintains its row in the table by sorting ascending by created date
+  const { data, error } = await supabase
+    .from("cabins")
+    .select("*")
+    .order("created_at", { ascending: true });
 
   if (error) {
     console.error(error);
@@ -12,6 +17,7 @@ export async function getCabins() {
 }
 
 export async function createEditCabin(newCabin, id) {
+  // Does an image path exist in the DB for this cabin?
   const hasImagePath = newCabin.image?.startsWith?.(supabaseUrl);
 
   const imageName = `${Math.random()}-${newCabin.image.name}`.replaceAll(
@@ -31,6 +37,7 @@ export async function createEditCabin(newCabin, id) {
   // B) EDIT
   if (id) query = query.update({ ...newCabin, image: imagePath }).eq("id", id);
 
+  // Return the row with .select().single() and use that row data
   const { data, error } = await query.select().single();
 
   if (error) {
