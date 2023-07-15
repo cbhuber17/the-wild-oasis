@@ -1,6 +1,7 @@
 import supabase from "./supabase";
 
 export async function getSettings() {
+  // .single() returns the only single row instead of the whole table.
   const { data, error } = await supabase.from("settings").select("*").single();
 
   if (error) {
