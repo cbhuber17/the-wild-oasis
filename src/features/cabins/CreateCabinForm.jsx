@@ -163,7 +163,6 @@ function CreateCabinForm({ cabinToEdit, closeModal }) {
         <Button
           variation="secondary"
           type="reset"
-          disabled={isWorking}
           onClick={() => closeModal?.()}
         >
           Cancel
