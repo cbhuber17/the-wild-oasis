@@ -27,6 +27,8 @@ function CabinTable() {
   if (isLoading) return <Spinner />;
 
   return (
+    // Menus gets wrapped in entire table, only allowing 1 to be open at a time
+    // Keep track of which of the menu (in each row) is opened, only 1 is allowed to be open
     <Menus>
       <Table columns="0.6fr 1.8fr 2.2fr 1fr 1fr 1fr">
         <Table.Header>

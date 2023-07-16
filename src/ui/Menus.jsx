@@ -67,8 +67,11 @@ const StyledButton = styled.button`
 
 const MenusContext = createContext();
 
+/* eslint-disable react/prop-types */
 function Menus({ children }) {
   const [openId, setOpenId] = useState("");
+
+  // Position of the list once clicking the menu
   const [position, setPosition] = useState(null);
 
   const close = () => setOpenId("");
@@ -88,23 +91,30 @@ function Toggle({ id }) {
 
   function handleClick(e) {
     const rect = e.target.closest("button").getBoundingClientRect();
+    // Set position of the menu list, just a few pixels around the point of click
     setPosition({
       x: window.innerWidth - rect.width - rect.x,
       y: rect.y + rect.height + 8,
     });
 
+    // Open the selected menu, close all others
     openId === "" || openId !== id ? open(id) : close();
   }
 
   return (
     <StyledToggle onClick={handleClick}>
+      {/* 3 vertical dots */}
       <HiEllipsisVertical />
     </StyledToggle>
   );
 }
 
+// List the items in the menu (e.g. edit, delete, etc.)
 function List({ id, children }) {
+  // Position is to position the menu near the ellipsis (point of click of the menu)
   const { openId, position, close } = useContext(MenusContext);
+
+  // Close the menu when clicking outside menu area
   const ref = useOutsideClick(close);
 
   if (openId !== id) return null;
