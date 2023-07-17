@@ -52,12 +52,14 @@ export async function updateCurrentUser({ password, fullName, avatar }) {
   if (password) updateData = { password };
   if (fullName) updateData = { data: { fullName } };
 
+  // Supabase will know who is logged in
   const { data, error } = await supabase.auth.updateUser(updateData);
 
   if (error) throw new Error(error.message);
   if (!avatar) return data;
 
   // 2. Upload the avatar image
+  // Needs to be unique
   const fileName = `avatar-${data.user.id}-${Math.random()}`;
 
   const { error: storageError } = await supabase.storage
