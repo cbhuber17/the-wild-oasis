@@ -4,12 +4,10 @@ import { PAGE_SIZE } from "../utils/constants";
 
 // Filtering and sorting is done on the server side, API will return only what was requested
 export async function getBookings({ filter, sortBy, page }) {
-  let query = supabase
-    .from("bookings")
-    .select(
-      "id, created_at, startDate, endDate, numNights, numGuests, status, totalPrice, cabins(name), guests(fullName, email)",
-      { count: "exact" }
-    );
+  let query = supabase.from("bookings").select(
+    "id, created_at, startDate, endDate, numNights, numGuests, status, totalPrice, cabins(name), guests(fullName, email)",
+    { count: "exact" } // Don't want to query the entire data, but only need number of results
+  );
 
   // FILTER
   // Filter method eg.: equals (eq), gte (greater than or equal)
@@ -26,7 +24,7 @@ export async function getBookings({ filter, sortBy, page }) {
   if (page) {
     const from = (page - 1) * PAGE_SIZE;
     const to = from + PAGE_SIZE - 1;
-    query = query.range(from, to);
+    query = query.range(from, to); // Similar to the .slice() method, grab only a certain chunk
   }
 
   const { data, error, count } = await query;

@@ -27,7 +27,7 @@ export function useBookings() {
   // QUERY
   const {
     isLoading,
-    data: { data: bookings, count } = {},
+    data: { data: bookings, count } = {}, // Initially data will not exist, so just destructure from empty object as the data comes in
     error,
   } = useQuery({
     queryKey: ["bookings", filter, sortBy, page], // Similar to a dependency array; clicking the different filter/sort/page buttons will result in a rerender update
