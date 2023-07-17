@@ -28,6 +28,8 @@ function CheckinBooking() {
   const [confirmPaid, setConfirmPaid] = useState(false);
   const [addBreakfast, setAddBreakfast] = useState(false);
   const { booking, isLoading } = useBooking();
+
+  // Breakfast price is in the settings
   const { settings, isLoading: isLoadingSettings } = useSettings();
 
   // Set confirm paid when it comes in; set the check box automatically as a result of this
@@ -76,6 +78,7 @@ function CheckinBooking() {
 
       <BookingDataBox booking={booking} />
 
+      {/* Breakfast check box */}
       {!hasBreakfast && (
         <Box>
           <Checkbox
@@ -91,6 +94,7 @@ function CheckinBooking() {
         </Box>
       )}
 
+      {/* Confirmation paid checkbox */}
       <Box>
         <Checkbox
           checked={confirmPaid}
