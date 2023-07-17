@@ -29,7 +29,10 @@ export async function login({ email, password }) {
 }
 
 export async function getCurrentUser() {
+  // Check for active session
   const { data: session } = await supabase.auth.getSession();
+
+  // No current user
   if (!session.session) return null;
 
   const { data, error } = await supabase.auth.getUser();

@@ -20,6 +20,7 @@ function LoginForm() {
       { email, password },
       {
         // onSettled is when it either success or fail, run this code anyway
+        // Clear the email and password fields after login attempt
         onSettled: () => {
           setEmail("");
           setPassword("");
