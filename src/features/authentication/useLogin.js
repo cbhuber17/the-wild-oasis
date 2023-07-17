@@ -12,6 +12,7 @@ export function useLogin() {
     onSuccess: (user) => {
       // After logging in, its not necessary to refetch the user via another API call
       // Put user in ReactQuery cache after logging in
+      // Do not use queryClient.setQueriesData()
       queryClient.setQueryData(["user"], user.user);
       navigate("/dashboard", { replace: true }); // Replace prevents browser back button; erases history
     },
