@@ -109,6 +109,7 @@ function BookingRow({
               See details
             </Menus.Button>
 
+            {/* Check someone in only when in unconfirmed status */}
             {status === "unconfirmed" && (
               <Menus.Button
                 icon={<HiArrowDownOnSquare />}
@@ -118,6 +119,7 @@ function BookingRow({
               </Menus.Button>
             )}
 
+            {/* Can't check someone out unless they have checked in */}
             {status === "checked-in" && (
               <Menus.Button
                 icon={<HiArrowUpOnSquare />}

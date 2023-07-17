@@ -25,6 +25,7 @@ const StyledCheckbox = styled.div`
   }
 `;
 
+/* eslint react/prop-types: 0 */
 function Checkbox({ checked, onChange, disabled = false, id, children }) {
   return (
     <StyledCheckbox>
