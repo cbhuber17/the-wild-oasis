@@ -51,6 +51,8 @@ function Filter({ filterField, options }) {
   function handleClick(value) {
     // Change URL based on the filter button clicked
     searchParams.set(filterField, value);
+
+    // Send the user back to page 1 when filter is applied
     if (searchParams.get("page")) searchParams.set("page", 1);
 
     setSearchParams(searchParams);
