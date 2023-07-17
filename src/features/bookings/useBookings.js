@@ -35,6 +35,8 @@ export function useBookings() {
   });
 
   // PRE-FETCHING
+  // Get the data for the next page when on the current page
+  // The result is a better UI experience, not having to wait for next page data when you get there, its already in the cache to be easily retrieved
   const pageCount = Math.ceil(count / PAGE_SIZE);
 
   if (page < pageCount)
