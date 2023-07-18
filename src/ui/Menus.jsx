@@ -90,6 +90,10 @@ function Toggle({ id }) {
   const { openId, close, open, setPosition } = useContext(MenusContext);
 
   function handleClick(e) {
+    // Allow menu to close when it is clicked on again
+    // No detection during the bubbling phase
+    e.stopPropagation();
+
     const rect = e.target.closest("button").getBoundingClientRect();
     // Set position of the menu list, just a few pixels around the point of click
     setPosition({
@@ -115,7 +119,8 @@ function List({ id, children }) {
   const { openId, position, close } = useContext(MenusContext);
 
   // Close the menu when clicking outside menu area
-  const ref = useOutsideClick(close);
+  // Set ListenCapturing to FALSE to allow menu to close when menu is clicked again
+  const ref = useOutsideClick(close, false);
 
   if (openId !== id) return null;
 
