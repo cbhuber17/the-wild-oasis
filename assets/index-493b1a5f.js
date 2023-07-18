@@ -1292,7 +1292,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 `,_ue=re.img`
   height: 9.6rem;
   width: auto;
-`;function c$(){const{isDarkMode:e}=Xh(),t=e?"/logo-dark.png":"/logo-light.png";return S.jsx(xue,{children:S.jsx(_ue,{src:t,alt:"Logo"})})}const Sue=re.main`
+`;function c$(){const{isDarkMode:e}=Xh(),t=e?"/the-wild-oasis/logo-dark.png":"/the-wild-oasis/logo-light.png";return S.jsx(xue,{children:S.jsx(_ue,{src:t,alt:"Logo"})})}const Sue=re.main`
   min-height: 100vh;
   display: grid;
   grid-template-columns: 48rem;
