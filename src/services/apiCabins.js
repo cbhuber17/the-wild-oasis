@@ -1,5 +1,4 @@
-import supabase from "./supabase";
-import { supabaseUrl } from "./supabase";
+import supabase, { supabaseUrl } from "./supabase";
 
 export async function getCabins() {
   // Ensure editied cabin maintains its row in the table by sorting ascending by created date

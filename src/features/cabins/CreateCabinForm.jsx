@@ -36,7 +36,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
     // No need to validate here, because it's already been done. This is REALLY nice!
 
     const image = typeof data.image === "string" ? data.image : data.image[0];
-
+    /* eslint-disable */
     if (isEditSession)
       editCabin(
         { newCabinData: { ...data, image }, id: editId },
@@ -57,11 +57,12 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
           },
         }
       );
+    /* eslint-enable */
   }
 
   // Invoked when validation fails
   function onError(errors) {
-    // console.log(errors);
+    console.log(errors);
   }
 
   // By default, validation happens the moment we submit the form, so when we call handleSubmit. From them on, validation happens on the onChange event [demonstrate]. We cah change that by passing options into useForm ('mode' and 'reValidateMode')
