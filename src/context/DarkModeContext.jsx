@@ -8,6 +8,7 @@ const DarkModeContext = createContext();
 function DarkModeProvider({ children }) {
   // Local storage in the browser
   const [isDarkMode, setIsDarkMode] = useLocalStorageState(
+    // Set dark mode based on current OS dark mode setting
     window.matchMedia("(prefers-color-scheme: dark)").matches,
     "isDarkMode"
   );
