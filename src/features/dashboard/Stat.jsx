@@ -47,6 +47,7 @@ const Value = styled.p`
   font-weight: 500;
 `;
 
+/* eslint react/prop-types: 0 */
 function Stat({ icon, title, value, color }) {
   return (
     <StyledStat>
