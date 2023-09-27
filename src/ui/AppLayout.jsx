@@ -2,14 +2,16 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import styled from "styled-components";
+import { css } from "styled-components";
+import { largest } from "../utils/media-queries";
 
 const StyledAppLayout = styled.div`
-  @media (min-width: 1250px) {
+  ${largest(css`
     display: grid;
     grid-template-columns: 26rem 1fr;
     grid-template-rows: auto 1fr;
     height: 100vh;
-  }
+  `)};
 `;
 
 const Main = styled.main`

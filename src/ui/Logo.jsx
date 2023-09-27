@@ -1,23 +1,28 @@
 import styled from "styled-components";
+import { css } from "styled-components";
 import { useDarkMode } from "../context/DarkModeContext";
 import { Link } from "react-router-dom";
+import { largest, lt_largest } from "../utils/media-queries";
 
 const StyledLogo = styled.div`
   text-align: center;
-  @media (max-width: 1250px) {
+
+  ${lt_largest(css`
     position: fixed;
     top: 0;
     left: 0;
-  }
+  `)}
 `;
 
 const Img = styled.img`
-  @media (min-width: 1250px) {
+  ${largest(css`
     height: 9.6rem;
-  }
-  @media (max-width: 1250px) {
+  `)}
+
+  ${lt_largest(css`
     height: 6.1rem;
-  }
+  `)}
+
   width: auto;
 `;
 
