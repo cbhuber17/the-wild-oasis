@@ -6,7 +6,7 @@ import Row from "../../ui/Row";
 import { useTodayActivity } from "./useTodayActivity";
 import Spinner from "../../ui/Spinner";
 import TodayItem from "./TodayItem";
-import { largest, large, medium } from "../../utils/media-queries";
+import { largest, large, medium, small } from "../../utils/media-queries";
 import { css } from "styled-components";
 
 const StyledToday = styled.div`
@@ -27,10 +27,15 @@ const StyledToday = styled.div`
   ${large(css`
     grid-column: 1 / span 2;
   `)}
-  
-    ${medium(css`
+
+  ${medium(css`
     grid-column: 2 / span 2;
   `)}
+
+  ${small(css`
+    grid-column: 1 / span 2;
+  `)}
+
   padding-top: 2.4rem;
 `;
 

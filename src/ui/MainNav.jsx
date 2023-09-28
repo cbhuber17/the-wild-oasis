@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { css } from "styled-components";
-import { lt_largest, largest } from "../utils/media-queries";
+import { largest, large, medium, small } from "../utils/media-queries";
 import {
   HiOutlineCalendarDays,
   HiOutlineCog6Tooth,
@@ -17,9 +17,20 @@ const NavList = styled.ul`
     gap: 0.8rem;
   `)}
 
-  ${lt_largest(css`
+  ${large(css`
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+  `)}
+
+  ${medium(css`
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  `)}
+
+  ${small(css`
+    a {
+      justify-content: center;
+    }
   `)}
 `;
 

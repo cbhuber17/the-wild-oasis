@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import styled from "styled-components";
 import { css } from "styled-components";
-import { largest } from "../utils/media-queries";
+import { largest, large, medium, small } from "../utils/media-queries";
 
 const StyledAppLayout = styled.div`
   ${largest(css`
@@ -16,10 +16,28 @@ const StyledAppLayout = styled.div`
 
 const Main = styled.main`
   background-color: var(--color-grey-50);
-  padding: 4rem 4.8rem 6.4rem;
-  /* overflow: scroll; */
+
+  ${largest(css`
+    padding: 4rem 4.8rem 6.4rem;
+    overflow-y: scroll;
+  `)}
+
+  ${large(css`
+    padding: 4rem 4.8rem 6.4rem;
+    overflow-y: hidden;
+  `)}
+
+  ${medium(css`
+    padding: 2rem 2.4rem 3.2rem;
+    overflow-y: hidden;
+  `)}
+
+  ${small(css`
+    padding: 1rem 1.2rem 1.6rem;
+    overflow-y: hidden;
+  `)}
+
   overflow-x: hidden;
-  overflow-y: scroll;
 `;
 
 const Container = styled.div`

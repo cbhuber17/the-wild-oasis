@@ -12,7 +12,7 @@ import {
 } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
 import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
-import { largest, large, medium } from "../../utils/media-queries";
+import { largest, large, medium, small } from "../../utils/media-queries";
 import { css } from "styled-components";
 
 const StyledSalesChart = styled(DashboardBox)`
@@ -23,8 +23,12 @@ const StyledSalesChart = styled(DashboardBox)`
   ${large(css`
     grid-column: 1 / -1;
   `)}
-  
+
   ${medium(css`
+    grid-column: 1 / -1;
+  `)}
+
+  ${small(css`
     grid-column: 1 / -1;
   `)}
 

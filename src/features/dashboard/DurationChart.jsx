@@ -9,7 +9,7 @@ import {
   Tooltip,
 } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
-import { largest, large, medium } from "../../utils/media-queries";
+import { largest, large, medium, small } from "../../utils/media-queries";
 import { css } from "styled-components";
 
 const ChartBox = styled.div`
@@ -27,9 +27,13 @@ const ChartBox = styled.div`
   ${large(css`
     grid-column: 3 / span 2;
   `)}
-  
+
   ${medium(css`
     grid-column: 1 / span 3;
+  `)}
+
+  ${small(css`
+    grid-column: 1 / span 2;
   `)}
 
   & > *:first-child {
