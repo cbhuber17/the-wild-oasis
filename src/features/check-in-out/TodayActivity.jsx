@@ -6,6 +6,8 @@ import Row from "../../ui/Row";
 import { useTodayActivity } from "./useTodayActivity";
 import Spinner from "../../ui/Spinner";
 import TodayItem from "./TodayItem";
+import { largest, large, medium } from "../../utils/media-queries";
+import { css } from "styled-components";
 
 const StyledToday = styled.div`
   /* Box */
@@ -17,7 +19,18 @@ const StyledToday = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  grid-column: 1 / span 2;
+
+  ${largest(css`
+    grid-column: 1 / span 2;
+  `)}
+
+  ${large(css`
+    grid-column: 1 / span 2;
+  `)}
+  
+    ${medium(css`
+    grid-column: 2 / span 2;
+  `)}
   padding-top: 2.4rem;
 `;
 

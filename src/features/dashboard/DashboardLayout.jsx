@@ -7,12 +7,30 @@ import { useCabins } from "../cabins/useCabins";
 import SalesChart from "./SalesChart";
 import DurationChart from "./DurationChart";
 import TodayActivity from "../check-in-out/TodayActivity";
+import { largest, large, medium } from "../../utils/media-queries";
+import { css } from "styled-components";
 
 const StyledDashboardLayout = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto 34rem auto;
-  gap: 2.4rem;
+  ${largest(css`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 34rem auto;
+    gap: 2.4rem;
+  `)}
+
+  ${large(css`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 34rem auto;
+    gap: 2.4rem;
+  `)}
+
+  ${medium(css`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 1.5rem;
+  `)}
 `;
 
 function DashboardLayout() {
