@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { size } from "../utils/media-queries";
 
 const sizes = {
   small: css`
@@ -7,6 +8,9 @@ const sizes = {
     text-transform: uppercase;
     font-weight: 600;
     text-align: center;
+    @media (max-width: ${size.smallest}) {
+      grid-column: 2 / span 2;
+    }
   `,
   medium: css`
     font-size: 1.4rem;

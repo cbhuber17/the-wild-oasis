@@ -7,7 +7,13 @@ import { useCabins } from "../cabins/useCabins";
 import SalesChart from "./SalesChart";
 import DurationChart from "./DurationChart";
 import TodayActivity from "../check-in-out/TodayActivity";
-import { largest, large, medium, small } from "../../utils/media-queries";
+import {
+  largest,
+  large,
+  medium,
+  small,
+  smallest,
+} from "../../utils/media-queries";
 import { css } from "styled-components";
 
 const StyledDashboardLayout = styled.div`
@@ -28,14 +34,21 @@ const StyledDashboardLayout = styled.div`
   ${medium(css`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: repeat(4, auto);
     gap: 1.5rem;
   `)}
 
   ${small(css`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-rows: repeat(6, auto);
+    gap: 1rem;
+  `)}
+
+  ${smallest(css`
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(12, auto);
     gap: 1rem;
   `)}
 `;

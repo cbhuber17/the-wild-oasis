@@ -6,19 +6,33 @@ import { Flag } from "../../ui/Flag";
 import Button from "../../ui/Button";
 import CheckoutButton from "./CheckoutButton";
 
+import { gt_smallest, smallest } from "../../utils/media-queries";
+import { css } from "styled-components";
+
 const StyledTodayItem = styled.li`
   display: grid;
-  grid-template-columns: 9rem 2rem 1fr 7rem 9rem;
-  gap: 1.2rem;
   align-items: center;
 
   font-size: 1.4rem;
   padding: 0.8rem 0;
   border-bottom: 1px solid var(--color-grey-100);
 
-  &:first-child {
-    border-top: 1px solid var(--color-grey-100);
-  }
+  ${gt_smallest(css`
+    grid-template-columns: 9rem 2rem 1fr 7rem 9rem;
+    gap: 1.2rem;
+    &:first-child {
+      border-top: 1px solid var(--color-grey-100);
+    }
+  `)}
+
+  ${smallest(css`
+    border: 1px solid white;
+    border-radius: 5px;
+    justify-content: center;
+    grid-template-columns: 9rem 2rem 18rem;
+    grid-template-rows: 6rem 3rem;
+    gap: 0.6rem;
+  `)}
 `;
 
 const Guest = styled.div`

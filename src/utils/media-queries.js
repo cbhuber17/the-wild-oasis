@@ -7,6 +7,12 @@ export const size = {
   large: "1250px",
 };
 
+export const gt_smallest = (inner) => css`
+  @media (min-width: ${size.smallest}) {
+    ${inner};
+  }
+`;
+
 export const smallest = (inner) => css`
   @media (max-width: ${size.smallest}) {
     ${inner};

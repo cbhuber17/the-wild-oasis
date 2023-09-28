@@ -1,7 +1,13 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { css } from "styled-components";
-import { largest, large, medium, small } from "../utils/media-queries";
+import {
+  largest,
+  large,
+  medium,
+  small,
+  smallest,
+} from "../utils/media-queries";
 import {
   HiOutlineCalendarDays,
   HiOutlineCog6Tooth,
@@ -28,6 +34,12 @@ const NavList = styled.ul`
   `)}
 
   ${small(css`
+    a {
+      justify-content: center;
+    }
+  `)}
+  
+  ${smallest(css`
     a {
       justify-content: center;
     }

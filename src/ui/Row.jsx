@@ -1,7 +1,14 @@
 import styled, { css } from "styled-components";
+import { gt_smallest, smallest } from "../utils/media-queries";
 
 const Row = styled.div`
-  display: flex;
+  ${gt_smallest(css`
+    display: flex;
+  `)}
+
+  ${smallest(css`
+    text-align: center;
+  `)}
 
   ${(props) =>
     props.type === "horizontal" &&

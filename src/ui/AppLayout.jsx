@@ -3,7 +3,13 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import styled from "styled-components";
 import { css } from "styled-components";
-import { largest, large, medium, small } from "../utils/media-queries";
+import {
+  largest,
+  large,
+  medium,
+  small,
+  smallest,
+} from "../utils/media-queries";
 
 const StyledAppLayout = styled.div`
   ${largest(css`
@@ -34,6 +40,11 @@ const Main = styled.main`
 
   ${small(css`
     padding: 1rem 1.2rem 1.6rem;
+    overflow-y: hidden;
+  `)}
+
+  ${smallest(css`
+    padding: 0.5rem 0.6rem 0.8rem;
     overflow-y: hidden;
   `)}
 
