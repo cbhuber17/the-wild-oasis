@@ -8,7 +8,7 @@ const StyledLogo = styled.div`
   text-align: center;
 
   ${lt_largest(css`
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
   `)}
