@@ -18,6 +18,7 @@ import {
   smallest,
 } from "../../utils/media-queries";
 import { css } from "styled-components";
+import { useState, useEffect } from "react";
 
 const ChartBox = styled.div`
   /* Box */
@@ -195,7 +196,20 @@ function DurationChart({ confirmedStays }) {
   const data = prepareData(startData, confirmedStays);
 
   // Pie chart characteristics based on viewport
-  const isSmallest = window.innerWidth < parseInt(size.smallest);
+  const [isSmallest, updateSmallest] = useState(
+    window.innerWidth < parseInt(size.smallest)
+  );
+
+  const updateMedia = () => {
+    updateSmallest(window.innerWidth < parseInt(size.smallest));
+  };
+
+  // Access DOM
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    // Cleanup
+    return () => window.removeEventListener("resize", updateMedia);
+  });
 
   let height = 240;
   let verticalAlign = "middle";
