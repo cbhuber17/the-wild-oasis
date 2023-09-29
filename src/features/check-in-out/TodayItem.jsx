@@ -26,7 +26,7 @@ const StyledTodayItem = styled.li`
   `)}
 
   ${smallest(css`
-    border: 1px solid white;
+    border: 1px solid navy;
     border-radius: 5px;
     justify-content: center;
     grid-template-columns: 9rem 2rem 18rem;
