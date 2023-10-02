@@ -20,3 +20,4 @@ TODO:
 - Update favicon
 - Add a feature to "Add Bookings" on the bookings page; similar to that of "Add Cabin" modal on cabins page
 - Environment variable to remove supabase API JWT key
+- Row/Row2 in Bookings/Cabins FilterTableOperations styling
