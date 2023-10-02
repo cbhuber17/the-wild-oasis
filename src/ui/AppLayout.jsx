@@ -29,11 +29,13 @@ const Main = styled.main`
   `)}
 
   ${large(css`
+    min-height: 85vh;
     padding: 4rem 4.8rem 6.4rem;
     overflow-y: hidden;
   `)}
-
+    
   ${medium(css`
+    min-height: 85vh;
     padding: 2rem 2.4rem 3.2rem;
     overflow-y: hidden;
   `)}
