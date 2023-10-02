@@ -57,6 +57,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  overflow-x: scroll;
 `;
 
 function AppLayout() {

@@ -1,6 +1,12 @@
 import { useSearchParams } from "react-router-dom";
 import styled, { css } from "styled-components";
-import { smallest } from "../utils/media-queries";
+import {
+  largest,
+  large,
+  medium,
+  small,
+  smallest,
+} from "../utils/media-queries";
 
 const StyledFilter = styled.div`
   border: 1px solid var(--color-grey-100);
@@ -8,8 +14,28 @@ const StyledFilter = styled.div`
   box-shadow: var(--shadow-sm);
   border-radius: var(--border-radius-sm);
   padding: 0.4rem;
-  display: flex;
-  gap: 0.4rem;
+
+  ${largest(css`
+    display: flex;
+    gap: 0.4rem;
+  `)}
+
+  ${large(css`
+    display: flex;
+    gap: 0.4rem;
+  `)}
+
+  ${medium(css`
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+  `)}
+
+  ${small(css`
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+  `)}
 
   ${smallest(css`
     margin-top: 1rem;
