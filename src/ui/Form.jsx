@@ -1,4 +1,11 @@
 import styled, { css } from "styled-components";
+import {
+  largest,
+  large,
+  medium,
+  small,
+  smallest,
+} from "../utils/media-queries";
 
 const Form = styled.form`
   ${(props) =>
@@ -15,7 +22,25 @@ const Form = styled.form`
   ${(props) =>
     props.type === "modal" &&
     css`
-      width: 80rem;
+      ${largest(css`
+        width: 80rem;
+      `)}
+      ${large(css`
+        width: 80rem;
+      `)}
+      ${medium(css`
+        width: 60rem;
+      `)}
+      ${small(css`
+        max-height: 80vh;
+        width: 40rem;
+        overflow-y: auto;
+      `)}
+      ${smallest(css`
+        max-height: 80vh;
+        width: 28rem;
+        overflow-y: auto;
+      `)}
     `}
     
   overflow: hidden;

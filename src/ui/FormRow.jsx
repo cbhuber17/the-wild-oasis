@@ -1,9 +1,20 @@
 import styled from "styled-components";
+import { largest, large, medium } from "../utils/media-queries";
+import { css } from "styled-components";
 
 const StyledFormRow = styled.div`
   display: grid;
   align-items: center;
-  grid-template-columns: 24rem 1fr 1.2fr;
+
+  ${largest(css`
+    grid-template-columns: 24rem 1fr 1.2fr;
+  `)}
+  ${large(css`
+    grid-template-columns: 24rem 1fr 1.2fr;
+  `)}
+  ${medium(css`
+    grid-template-columns: 24rem 3fr 1.2fr;
+  `)}
   gap: 2.4rem;
 
   padding: 1.2rem 0;
