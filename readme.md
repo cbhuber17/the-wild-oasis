@@ -16,8 +16,7 @@ A full stack web interface and API:
 TODO:
 
 - Similar to WorldWise, do lazy loading; break react components into smaller chunks
-- Put a notice for mobile browser detected that this app is not supported on mobile devices
 - Need to refresh user data for additional users in the future
 - Update favicon
-- Add a feature to "Add Bookings"
+- Add a feature to "Add Bookings" on the bookings page; similar to that of "Add Cabin" modal on cabins page
 - Environment variable to remove supabase API JWT key
