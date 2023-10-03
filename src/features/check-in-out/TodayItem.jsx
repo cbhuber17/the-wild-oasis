@@ -32,6 +32,8 @@ const StyledTodayItem = styled.li`
     grid-template-columns: 9rem 2rem 18rem;
     grid-template-rows: 6rem 3rem;
     gap: 0.6rem;
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
   `)}
 `;
 
