@@ -29,16 +29,21 @@ const StyledFilter = styled.div`
     display: grid;
     grid-auto-flow: column;
     justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   `)}
 
   ${small(css`
     display: grid;
     grid-auto-flow: column;
     justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   `)}
 
   ${smallest(css`
     margin-top: 1rem;
+    margin-bottom: 1rem;
     justify-content: space-around;
   `)}
 `;
