@@ -12,9 +12,35 @@ import {
 } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
 import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
+import {
+  largest,
+  large,
+  medium,
+  small,
+  smallest,
+} from "../../utils/media-queries";
+import { css } from "styled-components";
 
 const StyledSalesChart = styled(DashboardBox)`
-  grid-column: 1 / -1;
+  ${largest(css`
+    grid-column: 1 / -1;
+  `)}
+
+  ${large(css`
+    grid-column: 1 / -1;
+  `)}
+
+  ${medium(css`
+    grid-column: 1 / -1;
+  `)}
+
+  ${small(css`
+    grid-column: 1 / -1;
+  `)}
+
+  ${smallest(css`
+    grid-column: 1 / span 1;
+  `)}
 
   /* Hack to change grid line colors */
   & .recharts-cartesian-grid-horizontal line,

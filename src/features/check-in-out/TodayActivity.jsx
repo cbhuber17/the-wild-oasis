@@ -1,11 +1,19 @@
 import styled from "styled-components";
 
 import Heading from "../../ui/Heading";
-import Row from "../../ui/Row";
+import { Row } from "../../ui/Row";
 
 import { useTodayActivity } from "./useTodayActivity";
 import Spinner from "../../ui/Spinner";
 import TodayItem from "./TodayItem";
+import {
+  largest,
+  large,
+  medium,
+  small,
+  smallest,
+} from "../../utils/media-queries";
+import { css } from "styled-components";
 
 const StyledToday = styled.div`
   /* Box */
@@ -13,11 +21,35 @@ const StyledToday = styled.div`
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
 
-  padding: 3.2rem;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  grid-column: 1 / span 2;
+
+  ${largest(css`
+    padding: 3.2rem;
+    grid-column: 1 / span 2;
+  `)}
+
+  ${large(css`
+    padding: 3.2rem;
+    grid-column: 1 / span 2;
+  `)}
+
+  ${medium(css`
+    padding: 2.5rem;
+    grid-column: 2 / span 2;
+  `)}
+
+  ${small(css`
+    padding: 1.8rem;
+    grid-column: 1 / span 2;
+  `)}
+
+  ${smallest(css`
+    padding: 0.9rem;
+    grid-column: 1 / span 1;
+  `)}
+
   padding-top: 2.4rem;
 `;
 

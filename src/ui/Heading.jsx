@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { small, smallest } from "../utils/media-queries";
 
 // const test = css`
 //   text-align: center;
@@ -11,6 +12,14 @@ const Heading = styled.h1`
     css`
       font-size: 3rem;
       font-weight: 600;
+
+      ${small(css`
+        text-align: center;
+      `)}
+
+      ${smallest(css`
+        text-align: center;
+      `)}
     `}
 
   ${(props) =>

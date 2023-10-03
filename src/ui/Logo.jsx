@@ -1,12 +1,28 @@
 import styled from "styled-components";
+import { css } from "styled-components";
 import { useDarkMode } from "../context/DarkModeContext";
+import { Link } from "react-router-dom";
+import { largest, lt_largest } from "../utils/media-queries";
 
 const StyledLogo = styled.div`
   text-align: center;
+
+  ${lt_largest(css`
+    position: absolute;
+    top: 0;
+    left: 0;
+  `)}
 `;
 
 const Img = styled.img`
-  height: 9.6rem;
+  ${largest(css`
+    height: 9.6rem;
+  `)}
+
+  ${lt_largest(css`
+    height: 6.1rem;
+  `)}
+
   width: auto;
 `;
 
@@ -19,7 +35,9 @@ function Logo() {
 
   return (
     <StyledLogo>
-      <Img src={src} alt="Logo" />
+      <Link to="/dashboard">
+        <Img src={src} alt="Logo" />
+      </Link>
     </StyledLogo>
   );
 }

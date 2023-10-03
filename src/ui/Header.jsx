@@ -1,10 +1,19 @@
 import styled from "styled-components";
 import HeaderMenu from "./HeaderMenu";
 import UserAvatar from "./../features/authentication/UserAvatar";
+import { smallest, gt_smallest } from "../utils/media-queries";
+import { css } from "styled-components";
 
 const StyledHeader = styled.header`
+  ${gt_smallest(css`
+    padding: 1.2rem 4.8rem;
+  `)}
+  ${smallest(css`
+    padding: 1.2rem 0.5rem;
+  `)}
+
+
   background-color: var(--color-grey-0);
-  padding: 1.2rem 4.8rem;
   border-bottom: 1px solid var(--color-grey-100);
 
   display: flex;

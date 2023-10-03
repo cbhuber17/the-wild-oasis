@@ -9,6 +9,16 @@ import {
   Tooltip,
 } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
+import {
+  size,
+  largest,
+  large,
+  medium,
+  small,
+  smallest,
+} from "../../utils/media-queries";
+import { css } from "styled-components";
+import { useState, useEffect } from "react";
 
 const ChartBox = styled.div`
   /* Box */
@@ -16,8 +26,43 @@ const ChartBox = styled.div`
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
 
-  padding: 2.4rem 3.2rem;
-  grid-column: 3 / span 2;
+  ${largest(css`
+    padding: 2.4rem 3.2rem;
+    grid-column: 3 / span 2;
+  `)}
+
+  ${large(css`
+    padding: 2.4rem 3.2rem;
+    grid-column: 3 / span 2;
+  `)}
+  
+  ${medium(css`
+    padding: 2.4rem 3.2rem;
+    grid-column: 1 / span 3;
+  `)}
+  
+  ${small(css`
+    padding: 1rem;
+    grid-column: 1 / span 2;
+    h2 {
+      text-align: center;
+    }
+  `)}
+  
+  ${smallest(css`
+    padding: 0.5rem;
+    grid-column: 1 / span 1;
+
+    /* &.recharts-wrapper {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+    } */
+
+    h2 {
+      text-align: center;
+    }
+  `)}
+
 
   & > *:first-child {
     margin-bottom: 1.6rem;
@@ -150,10 +195,42 @@ function DurationChart({ confirmedStays }) {
   const startData = isDarkMode ? startDataDark : startDataLight;
   const data = prepareData(startData, confirmedStays);
 
+  // Pie chart characteristics based on viewport
+  const [isSmallest, updateSmallest] = useState(
+    window.innerWidth < parseInt(size.smallest)
+  );
+
+  const updateMedia = () => {
+    updateSmallest(window.innerWidth < parseInt(size.smallest));
+  };
+
+  // Access DOM
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    // Cleanup
+    return () => window.removeEventListener("resize", updateMedia);
+  });
+
+  let height = 240;
+  let verticalAlign = "middle";
+  let align = "right";
+  let width = "30%";
+  let layout = "vertical";
+  let cx = "40%";
+
+  if (isSmallest) {
+    height = 300;
+    verticalAlign = "bottom";
+    align = "center";
+    width = "100%";
+    layout = "horizontal";
+    cx = "50%";
+  }
+
   return (
     <ChartBox>
       <Heading as="h2">Stay duration summary</Heading>
-      <ResponsiveContainer width="100%" height={240}>
+      <ResponsiveContainer width="100%" height={height}>
         <PieChart>
           <Pie
             data={data}
@@ -161,7 +238,7 @@ function DurationChart({ confirmedStays }) {
             dataKey="value"
             innerRadius={85}
             outerRadius={110}
-            cx="40%"
+            cx={cx}
             cy="50%"
             paddingAngle={3}
           >
@@ -176,10 +253,10 @@ function DurationChart({ confirmedStays }) {
           {/* Tooltip shows data on hover */}
           <Tooltip />
           <Legend
-            verticalAlign="middle"
-            align="right"
-            width="30%"
-            layout="vertical"
+            verticalAlign={verticalAlign}
+            align={align}
+            width={width}
+            layout={layout}
             iconSize={15}
             iconType="circle"
           />
