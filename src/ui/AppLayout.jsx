@@ -41,11 +41,13 @@ const Main = styled.main`
   `)}
 
   ${small(css`
+    min-height: 91vh;
     padding: 1rem 1.2rem 1.6rem;
     overflow-y: hidden;
   `)}
 
   ${smallest(css`
+    min-height: 91vh;
     padding: 0.5rem 0.6rem 0.8rem;
     overflow-y: hidden;
   `)}
