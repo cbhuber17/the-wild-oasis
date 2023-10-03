@@ -1,4 +1,4 @@
-import{s as n,d as a,e as c,E as o}from"./index-eea9e710.js";import{u}from"./apiBookings-de44f43c.js";const p=n.span`
+import{s as n,d as a,e as c,E as o}from"./index-0a34fab9.js";import{u}from"./apiBookings-eb2aad22.js";const p=n.span`
   width: fit-content;
   text-transform: uppercase;
   font-size: 1.1rem;

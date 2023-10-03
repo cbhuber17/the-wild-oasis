@@ -1,4 +1,4 @@
-import{s,l as a,A as r,a as m,b as c,c as l,N as x,j as e,L as h,u,d as v,e as j,f as p,S as f,g as y,h as b,i as k,k as w,m as H,O as $}from"./index-eea9e710.js";import{H as S,a as L,b as M,c as O,d as A,e as C,f as N,g as U,h as D}from"./index.esm-1ca176e4.js";const R=s.ul`
+import{s,l as a,A as r,a as m,b as c,c as l,N as h,j as e,L as x,u as g,d as v,e as j,f as p,S as f,g as y,h as b,i as k,k as w,m as H,O as $}from"./index-0a34fab9.js";import{H as S,a as L,b as M,c as O,d as A,e as C,f as N,g as U,h as D}from"./index.esm-dd9e6792.js";const R=s.ul`
   ${a(r`
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@ import{s,l as a,A as r,a as m,b as c,c as l,N as x,j as e,L as h,u,d as v,e as j
       }
     }
   `)}
-`,n=s(x)`
+`,n=s(h)`
   &:link,
   &:visited {
     display: flex;
@@ -75,7 +75,7 @@ import{s,l as a,A as r,a as m,b as c,c as l,N as x,j as e,L as h,u,d as v,e as j
 
   background-color: var(--color-grey-0);
   border-right: 1px solid var(--color-grey-100);
-`;function z(){return e.jsxs(_,{children:[e.jsx(h,{}),e.jsx(T,{})]})}const d=s.button`
+`;function z(){return e.jsxs(_,{children:[e.jsx(x,{}),e.jsx(T,{})]})}const d=s.button`
   background: none;
   border: none;
   padding: 0.6rem;
@@ -91,10 +91,10 @@ import{s,l as a,A as r,a as m,b as c,c as l,N as x,j as e,L as h,u,d as v,e as j
     height: 2.2rem;
     color: var(--color-brand-600);
   }
-`;function B(){const o=u(),i=v(),{mutate:t,isLoading:g}=j({mutationFn:p,onSuccess:()=>{i.removeQueries(),o("/login",{replace:!0})}});return{logout:t,isLoading:g}}function Q(){const{logout:o,isLoading:i}=B();return e.jsx(d,{disabled:i,onClick:o,children:i?e.jsx(f,{}):e.jsx(C,{})})}function q(){const{isDarkMode:o,toggleDarkMode:i}=y();return e.jsx(d,{onClick:i,children:o?e.jsx(N,{}):e.jsx(U,{})})}const E=s.ul`
+`;function B(){const i=g(),o=v(),{mutate:t,isLoading:u}=j({mutationFn:p,onSuccess:()=>{o.removeQueries(),i("/login",{replace:!0})}});return{logout:t,isLoading:u}}function Q(){const{logout:i,isLoading:o}=B();return e.jsx(d,{disabled:o,onClick:i,children:o?e.jsx(f,{}):e.jsx(C,{})})}function q(){const{isDarkMode:i,toggleDarkMode:o}=y();return e.jsx(d,{onClick:o,children:i?e.jsx(N,{}):e.jsx(U,{})})}const E=s.ul`
   display: flex;
   gap: 0.4rem;
-`;function F(){const o=u();return e.jsxs(E,{children:[e.jsx("li",{children:e.jsx(d,{onClick:()=>o("/account"),children:e.jsx(D,{})})}),e.jsx("li",{children:e.jsx(q,{})}),e.jsx("li",{children:e.jsx(Q,{})})]})}const I=s.div`
+`;function F(){const i=g();return e.jsxs(E,{children:[e.jsx("li",{children:e.jsx(d,{onClick:()=>i("/account"),children:e.jsx(D,{})})}),e.jsx("li",{children:e.jsx(q,{})}),e.jsx("li",{children:e.jsx(Q,{})})]})}const I=s.div`
   display: flex;
   gap: 1.2rem;
   align-items: center;
@@ -110,7 +110,7 @@ import{s,l as a,A as r,a as m,b as c,c as l,N as x,j as e,L as h,u,d as v,e as j
   object-position: center;
   border-radius: 50%;
   outline: 2px solid var(--color-grey-100);
-`;function J(){const{user:o}=b(),{fullName:i,avatar:t}=o.user_metadata;return e.jsxs(I,{children:[e.jsx(G,{src:t||"default-user.jpg",alt:`Avatar of ${i}`}),e.jsx("span",{children:i})]})}const K=s.header`
+`;function J(){const{user:i}=b(),{fullName:o,avatar:t}=i.user_metadata;return e.jsxs(I,{children:[e.jsx(G,{src:t||"default-user.jpg",alt:`Avatar of ${o}`}),e.jsx("span",{children:o})]})}const K=s.header`
   ${k(r`
     padding: 1.2rem 4.8rem;
   `)}
@@ -154,11 +154,13 @@ import{s,l as a,A as r,a as m,b as c,c as l,N as x,j as e,L as h,u,d as v,e as j
   `)}
 
   ${c(r`
+    min-height: 91vh;
     padding: 1rem 1.2rem 1.6rem;
     overflow-y: hidden;
   `)}
 
   ${l(r`
+    min-height: 91vh;
     padding: 0.5rem 0.6rem 0.8rem;
     overflow-y: hidden;
   `)}
