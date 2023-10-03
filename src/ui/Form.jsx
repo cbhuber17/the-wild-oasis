@@ -32,12 +32,12 @@ const Form = styled.form`
         width: 60rem;
       `)}
       ${small(css`
-        max-height: 80vh;
+        max-height: 100vh;
         width: 40rem;
         overflow-y: auto;
       `)}
       ${smallest(css`
-        max-height: 80vh;
+        max-height: 100vh;
         width: 28rem;
         overflow-y: auto;
       `)}
