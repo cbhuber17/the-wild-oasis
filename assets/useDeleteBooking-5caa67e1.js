@@ -1,0 +1,1 @@
+import{d as i,e as r,E as e}from"./index-8af32a30.js";import{d as u}from"./apiBookings-58ec83a8.js";function c(){const o=i(),{isLoading:s,mutate:n}=r({mutationFn:u,onSuccess:()=>{e.success("Booking successfully deleted"),o.invalidateQueries({queryKey:["bookings"]})},onError:t=>e.error(t.message)});return{isDeleting:s,deleteBooking:n}}export{c as u};

@@ -1,4 +1,4 @@
-import{s as r}from"./index-0a34fab9.js";const a=r.img`
+import{s as r}from"./index-8af32a30.js";const a=r.img`
   max-width: 2rem;
   border-radius: var(--border-radius-tiny);
   display: block;
