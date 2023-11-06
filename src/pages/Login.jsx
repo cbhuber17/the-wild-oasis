@@ -26,6 +26,7 @@ function Login() {
       <Logo />
       <Heading as="h4">Log in to your account</Heading>
       <LoginForm />
+      <p>Contact app administrator if you would like a demo account.</p>
     </LoginLayout>
   );
 }
