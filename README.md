@@ -66,3 +66,4 @@ To streamline their operations and enhance guest experiences, "The Wild Oasis" i
 - Need to refresh user data for additional users in the future
 - Add a feature to "Add Bookings" on the bookings page; similar to that of "Add Cabin" modal on cabins page
 - Row/Row2 in Bookings/Cabins FilterTableOperations styling
+- For small viewports, make hamburger menu
